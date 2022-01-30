@@ -48,3 +48,10 @@
     restart server nodemon app.js
     buka browser : http://localhost:3000/
     lakukan input todolist dan data akan bertambah
+
+## 345. Deleting Items to our Todolist Database
+
+    restart server nodemon app.js
+    buka browser : http://localhost:3000/
+    kemudian cobal cheklist checkbox pada list yang tersedia, dan lihat apa yang terjadi
+    response juga dapat dilihat pada terminal.
