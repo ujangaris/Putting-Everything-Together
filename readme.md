@@ -24,3 +24,21 @@
 ## 343. Rendering Database items in the ToDoList App part 1
 
     menampilkan data : http://localhost:3000/
+
+## 343. Rendering Database items in the ToDoList App part 2
+
+    (kondisi jika data belum tersedia dan juga jika data tersedia)
+    pertma delete database :
+    mongo
+    > use todolistDB
+    switched to db todolistDB
+    > show collections
+    items
+    > db.dropDatabase()
+    { "dropped" : "todolistDB", "ok" : 1 }
+    > show dbs
+
+    maka database todolistDB akan terhapus.
+
+    selanjutnya restart server nodemon app.js
+    dan tampilkan data pada browser : http://localhost:3000/
