@@ -42,3 +42,9 @@
 
     selanjutnya restart server nodemon app.js
     dan tampilkan data pada browser : http://localhost:3000/
+
+## 344. Adding new Items to our Todolist Database
+
+    restart server nodemon app.js
+    buka browser : http://localhost:3000/
+    lakukan input todolist dan data akan bertambah
