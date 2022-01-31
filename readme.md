@@ -69,3 +69,11 @@
     show collections
     masuk kedalam lists : db.lists.find()
     dan coba liat isi lists
+
+## 347. Adding New Items to the Custom ToDo Lists
+
+    pengujian pada browser : http://localhost:3000/<masukan nama parameter>
+        note: nama parameter : bisa home, work, school
+        contoh http://localhost:3000/School
+        kemudian coba input data .
+        dikatan berhasil jika pada parameter inputan berhasil menampikan data yang di input pada todolist.
