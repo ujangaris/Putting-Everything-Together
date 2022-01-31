@@ -55,3 +55,17 @@
     buka browser : http://localhost:3000/
     kemudian cobal cheklist checkbox pada list yang tersedia, dan lihat apa yang terjadi
     response juga dapat dilihat pada terminal.
+
+## 346. Creating Custom Lists using Express Route Parameters
+
+    pengujian pada browser : http://localhost:3000/<masukan nama parameter>
+        note: nama parameter : bisa home, work, school
+        contoh http://localhost:3000/School
+
+    pengujian pada database:
+    mongo
+    show dbs
+    use todolistDB
+    show collections
+    masuk kedalam lists : db.lists.find()
+    dan coba liat isi lists
