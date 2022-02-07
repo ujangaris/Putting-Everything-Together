@@ -77,3 +77,35 @@
         contoh http://localhost:3000/School
         kemudian coba input data .
         dikatan berhasil jika pada parameter inputan berhasil menampikan data yang di input pada todolist.
+
+## 348. Revisiting Loadash and Deleting Items from Custom ToDo Lists
+
+    Documentation: https://docs.mongodb.com/manual/reference/operator/update/pull/
+
+    install lodash : npm i lodash
+    Documentation: https://lodash.com/docs/4.17.15#capitalize
+
+        ┌──────────────────────────────────────────────────────────────────────────────┐
+        │  note:   loadash capitalize digunakan pada bagian parameter web setelah      │
+        │           http://localhost:3000,                                             │
+        │          jika /work atau /Work akan dibaca sama dan menuju halaman yang      │
+        │           sama.                                                              │
+        │             contoh : http://localhost:3000/work dan                          │
+        │                       http://localhost:3000/Work dibaca oleh browser         │
+        │                       sama                                                   │
+        └──────────────────────────────────────────────────────────────────────────────┘
+
+    pertama hapus data lists:
+    masuk ke mongo:
+    mongo
+    show dbs
+    use todolistDB
+    show collections
+    db.lists.drop()
+
+
+    pengujian pada browser : http://localhost:3000/<masukan nama parameter>
+        note: nama parameter : bisa home, work, school
+        contoh http://localhost:3000/School
+        kemudian coba cheklist data(disini cheklis menandakan hapus) .
+        dikatan berhasil jika pada halaman brwoser yang sesuai parameter berhasil menghapus data pada todolist.
