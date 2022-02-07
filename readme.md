@@ -109,3 +109,23 @@
         contoh http://localhost:3000/School
         kemudian coba cheklist data(disini cheklis menandakan hapus) .
         dikatan berhasil jika pada halaman brwoser yang sesuai parameter berhasil menghapus data pada todolist.
+
+## Section 29: Deploying Your Web Application
+### 351. How to Setup MongoDB Atlas
+    
+    ┌──────────────────────────────────────────────────────────────────────────────┐
+    │ pada halaman mongodb klik connect :                                          │
+    │     =>  connect your aplication                                              │
+    │     =>  copy string :                                                        │
+    │         mongodb+srv://ujang123:<password>@ujangarisandi.poe2b.mongodb.net/   │
+    │         myFirstDatabase?retryWrites=true&w=majority                          │
+    │                                                                              │
+    │         ganti <password> dengan password yang sesuai , jika lupa liat pada   │
+    │         database access                                                      │
+    │         kemudian pilih password dan show password.                           │
+    │     =>  dan pastekan pada app.js                                             │
+    │     =>  restart kembali server, kemudian coba input todoList pada browser    │
+    │         dan lihat pada mongodb altas,                                        │
+    │         jika data berhasil ter integrasi maka langkah yang kita lakukan      │
+    │         berhasil                                                             │
+    └──────────────────────────────────────────────────────────────────────────────┘
