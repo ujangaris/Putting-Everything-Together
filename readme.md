@@ -111,8 +111,9 @@
         dikatan berhasil jika pada halaman brwoser yang sesuai parameter berhasil menghapus data pada todolist.
 
 ## Section 29: Deploying Your Web Application
+
 ### 351. How to Setup MongoDB Atlas
-    
+
     ┌──────────────────────────────────────────────────────────────────────────────┐
     │ pada halaman mongodb klik connect :                                          │
     │     =>  connect your aplication                                              │
@@ -128,4 +129,91 @@
     │         dan lihat pada mongodb altas,                                        │
     │         jika data berhasil ter integrasi maka langkah yang kita lakukan      │
     │         berhasil                                                             │
+    └──────────────────────────────────────────────────────────────────────────────┘
+
+### 352. Deploying an App with a Database to Heroku
+
+        ┌──────────────────────────────────────────────────────────────────────────────┐
+        │ note: deploying ini tidak menggunakan file .env                              │
+        │       jadi tidak perlu pengaturan tambahan                                   │
+        └──────────────────────────────────────────────────────────────────────────────┘
+    Documentation:
+            https://devcenter.heroku.com/articles/deploying-nodejs
+            https://devcenter.heroku.com/search?utf8=%E2%9C%93&q=articles+deploying+nodejs&commit=Submit+search
+            https://devcenter.heroku.com/articles/git
+            https://devcenter.heroku.com/articles/preparing-a-codebase-for-heroku-deployment
+
+    untuk lebih aman lakukan langkah berikut:
+    copy folder directory todolist,
+    kemudian namakan sesuai yang kita inginkan,
+    lalu hapus file .git dengan cara rm -rf .git
+
+    git init
+    git add .
+    git commit-"Initial commit"
+
+    login to heroku:
+    heroku login
+    kemuan kelik tombol apa saja pada keybord,
+    tunggu beberapa saat akan terbuka halaman login heroku
+    jika succes akan seperti ini:
+        Logging in... done
+        Logged in as ujangaja@gmail.com
+
+    heroku create
+    touch Procfile
+
+    pada file Procfile isi seperti berikut:
+        web: node app.js
+
+    pada app.js  update port:
+
+    ┌──────────────────────────────────────────────────────────────────────────────┐
+    │         let port = process.env.PORT                                          │
+    │         if(port == null || port == ""){                                      │
+    │             port = 3000                                                      │
+    │         }                                                                    │
+    │                                                                              │
+    │         app.listen(port, function(){                                         │
+    │             console.log("Server has started success")                        │
+    │         })                                                                   │
+    └──────────────────────────────────────────────────────────────────────────────┘
+
+    pada package.json tambahkan
+        "engines": {
+        "node": "14.x"
+    },
+
+    seperti berikut :
+    ┌──────────────────────────────────────────────────────────────────────────────┐
+    │       "license": "ISC",                                                      │
+    │       "engines": {                                                           │
+    │         "node": "14.x"                                                       │
+    │       },                                                                     │
+    └──────────────────────────────────────────────────────────────────────────────┘
+
+    buat file .gitignore
+    touch .gitignore
+    pastekan pada file .gitignore
+    ┌──────────────────────────────────────────────────────────────────────────────┐
+    │       /node_modules                                                          │
+    │       npm-debug.log                                                          │
+    │       .DS_Store                                                              │
+    │       /*.env                                                                 │
+    └──────────────────────────────────────────────────────────────────────────────┘
+
+    git add .
+    git commit -m"Add gitignore, procfile and update ports"
+    git push heroku master
+    tunggu beberapa saat...
+    pada terminal akan tampil halaman dari application yang kita deploy, contoh:
+    ┌──────────────────────────────────────────────────────────────────────────────┐
+    │     remote: ---> Launching...                                                │
+    │     remote:      Released v3                                                 │
+    │     remote:      https://limitless-sands-25469.herokuapp.com/ deployed to-   │
+    │                  Heroku                                                      │
+    │     remote:                                                                  │
+    │     remote: Verifying deploy... done.                                        │
+    │                                                                              │
+    │     klik ctr + klik pada https://limitless-sands-25469.herokuapp.com/        │
     └──────────────────────────────────────────────────────────────────────────────┘
